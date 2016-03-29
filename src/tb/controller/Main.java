@@ -3,17 +3,33 @@ package tb.controller;
 import java.io.IOException;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import tb.controller.modelo.Pessoa;
 
 public class Main extends Application {
 
     private Stage primaryStage;
     private BorderPane menu;
+    private ObservableList<Pessoa> personData = FXCollections.observableArrayList();
 
+    public Main() {
+        // Add some sample data
+        personData.add(new Pessoa(1, "Mauricio", 99023808));
+        personData.add(new Pessoa(1, "Mauricio", 99023808));
+        personData.add(new Pessoa(1, "Mauricio", 99023808));
+        personData.add(new Pessoa(1, "Mauricio", 99023808));
+        personData.add(new Pessoa(1, "Mauricio", 99023808));
+        
+        }
+    public ObservableList<Pessoa> getPersonData() {
+        return personData;
+    }
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
