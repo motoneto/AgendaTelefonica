@@ -14,8 +14,8 @@
       <Label layoutX="14.0" layoutY="46.0" text="ID : " textOverrun="CLIP" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="46.0" />
       <Label layoutX="14.0" layoutY="79.0" text="Nome : " AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="79.0" />
       <Label layoutX="14.0" layoutY="115.0" text="Telefone : " AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="115.0" />
-      <Button layoutX="327.0" layoutY="111.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Novo" />
-      <Button layoutX="418.0" layoutY="111.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Editar" />
+      <Button layoutX="327.0" layoutY="111.0" mnemonicParsing="false" onAction="#handleNewPerson" prefHeight="25.0" prefWidth="84.0" text="Novo" />
+      <Button layoutX="418.0" layoutY="111.0" mnemonicParsing="false" onAction="#handleEditPerson" prefHeight="25.0" prefWidth="84.0" text="Editar" />
       <Button layoutX="510.0" layoutY="111.0" mnemonicParsing="false" onAction="#handleDeletePerson" prefHeight="25.0" prefWidth="84.0" text="Deletar" />
       <SplitPane layoutX="196.0" layoutY="161.0" orientation="VERTICAL" prefHeight="239.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="161.0">
         <items>
