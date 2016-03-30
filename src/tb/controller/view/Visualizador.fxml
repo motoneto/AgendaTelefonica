@@ -5,6 +5,7 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -42,5 +43,6 @@
       <Label fx:id="IdLabel" layoutX="121.0" layoutY="46.0" text="Label" />
       <Label fx:id="NomeLabel" layoutX="121.0" layoutY="79.0" text="Label" />
       <Label fx:id="TelefoneLabel" layoutX="121.0" layoutY="115.0" text="Label" />
+      <TextField fx:id="IdTextField" layoutX="238.0" layoutY="42.0" />
    </children>
 </AnchorPane>

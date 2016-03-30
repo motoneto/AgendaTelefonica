@@ -3,6 +3,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import tb.controller.Main;
 import tb.controller.modelo.Pessoa;
 
@@ -18,6 +19,8 @@ public class VisualizadorController {
 	    private TableColumn<Pessoa, String> TelefoneColumn;
 	    @FXML
 	    private Label IdLabel;
+	    //@FXML
+	    //private TextField IdTextField;
 	    @FXML
 	    private Label NomeLabel;
 	    @FXML
@@ -31,9 +34,24 @@ public class VisualizadorController {
 	        IdColumn.setCellValueFactory(cellData -> cellData.getValue().IdProperty());
 	        NomeColumn.setCellValueFactory(cellData -> cellData.getValue().NomeProperty());
 	        TelefoneColumn.setCellValueFactory(cellData -> cellData.getValue().TelefoneProperty());
+	        
+	       // IdColumn.setCellValueFactory(cellData -> cellData.getValue().IdProperty());
+	        
 	    }
 	    public void setMain(Main main) {
 	        this.main = main;
 	        personTable.setItems(main.getPersonData());
 	    }
+	    private void showPersonDetails(Pessoa person) {
+	        if (person != null) {
+	            NomeLabel.setText(person.getNome());
+	            IdLabel.setText(person.getId());
+	            TelefoneLabel.setText(person.getTelefone());
+	        } else {
+	            NomeLabel.setText("");
+	            IdLabel.setText("");
+	            TelefoneLabel.setText("");
+	        }
+	    }
+	    
 }
