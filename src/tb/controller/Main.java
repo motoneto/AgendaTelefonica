@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -20,6 +21,7 @@ public class Main extends Application {
     private Stage primaryStage;
     private BorderPane menu;
     private ObservableList<Pessoa> personData = FXCollections.observableArrayList();
+    
 
     public Main() {
         personData.add(new Pessoa("1", "Mauricio", "99023808"));
@@ -50,7 +52,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("AgendaTelefonica");
-
+        this.primaryStage.getIcons().add(new Image("file:resources/images/icone.png"));
         initRootLayout();
 
         showVisualizador();
