@@ -20,7 +20,6 @@ public class Main extends Application {
     private ObservableList<Pessoa> personData = FXCollections.observableArrayList();
 
     public Main() {
-        // Add some sample data
         personData.add(new Pessoa("1", "Mauricio", "99023808"));
         personData.add(new Pessoa("1", "Mauricio", "99023808"));
         personData.add(new Pessoa("1", "Mauricio", "99023808"));
@@ -52,7 +51,7 @@ public class Main extends Application {
 
         initRootLayout();
 
-        showPersonOverview();
+        showVisualizador();
     }
 
     public void initRootLayout() {
