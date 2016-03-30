@@ -32,4 +32,8 @@ public class VisualizadorController {
 	        NomeColumn.setCellValueFactory(cellData -> cellData.getValue().NomeProperty());
 	        TelefoneColumn.setCellValueFactory(cellData -> cellData.getValue().TelefoneProperty());
 	    }
+	    public void setMain(Main main) {
+	        this.main = main;
+	        personTable.setItems(main.getPersonData());
+	    }
 }
