@@ -20,11 +20,11 @@ public class Main extends Application {
 
     public Main() {
         // Add some sample data
-        personData.add(new Pessoa(1, "Mauricio", 99023808));
-        personData.add(new Pessoa(1, "Mauricio", 99023808));
-        personData.add(new Pessoa(1, "Mauricio", 99023808));
-        personData.add(new Pessoa(1, "Mauricio", 99023808));
-        personData.add(new Pessoa(1, "Mauricio", 99023808));
+        personData.add(new Pessoa("1", "Mauricio", "99023808"));
+        personData.add(new Pessoa("1", "Mauricio", "99023808"));
+        personData.add(new Pessoa("1", "Mauricio", "99023808"));
+        personData.add(new Pessoa("1", "Mauricio", "99023808"));
+        personData.add(new Pessoa("1", "Mauricio", "99023808"));
         
         }
     public ObservableList<Pessoa> getPersonData() {
@@ -33,7 +33,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("AddressApp");
+        this.primaryStage.setTitle("AgendaTelefonica");
 
         initRootLayout();
 
