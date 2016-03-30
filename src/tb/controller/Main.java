@@ -11,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import tb.controller.modelo.Pessoa;
+import tb.controller.view.VisualizadorController;
 
 public class Main extends Application {
 
@@ -27,6 +28,20 @@ public class Main extends Application {
         personData.add(new Pessoa("1", "Mauricio", "99023808"));
         
         }
+    public void showVisualizador() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("view/Visualizador.fxml"));
+            AnchorPane personOverview = (AnchorPane) loader.load();
+            menu.setCenter(personOverview);
+
+            VisualizadorController controller = loader.getController();
+            controller.setMain(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public ObservableList<Pessoa> getPersonData() {
         return personData;
     }
