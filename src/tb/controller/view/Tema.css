@@ -3,23 +3,23 @@
 }
 
 .label {
-    -fx-font-size: 10pt;
+    -fx-font-size: 13pt;
     -fx-font-family: "Segoe Print";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
     -fx-opacity: 0.6;
 }
 
 .label-bright {
-    -fx-font-size: 10pt;
+    -fx-font-size: 13pt;
     -fx-font-family: "Segoe Print";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
     -fx-opacity: 1;
 }
 
 .label-header {
     -fx-font-size: 32pt;
     -fx-font-family: "Segoe Print";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
     -fx-opacity: 1;
 }
 
@@ -29,7 +29,7 @@
     -fx-background-color: #1E90FF;
     -fx-table-cell-border-color: transparent;
     -fx-table-header-border-color: transparent;
-    -fx-padding: 5;
+    -fx-padding: 2;
 }
 
 .table-view .column-header-background {
@@ -49,9 +49,9 @@
 }
 
 .table-view .column-header .label {
-    -fx-font-size: 20pt;
+    -fx-font-size: 15pt;
     -fx-font-family: "Segoe Print";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
     -fx-alignment: center-left;
     -fx-opacity: 1;
 }
@@ -60,7 +60,7 @@
     -fx-background-color: -fx-focus-color;
 }
 
-.split-pane:horizontal > .split-pane-divider {
+.split-pane:vertical > .split-pane-divider {
     -fx-border-color: transparent #1d1d1d transparent #1d1d1d;
     -fx-background-color: transparent, derive(#1d1d1d,20%);
 }
@@ -70,17 +70,17 @@
 }
 
 .menu-bar {
-    -fx-background-color: derive(#1d1d1d,20%);
+    -fx-background-color: derive(#1E90FF,20%);
 }
 
 .context-menu {
-    -fx-background-color: derive(#1d1d1d,50%);
+    -fx-background-color: derive(#1E90FF,50%);
 }
 
 .menu-bar .label {
     -fx-font-size: 14pt;
     -fx-font-family: "Segoe Print";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
     -fx-opacity: 0.9;
 }
 
@@ -93,14 +93,14 @@
     -fx-font-family: "Segoe Script";
 }
 .button {
-    -fx-padding: 5 22 5 22;   
+    -fx-padding: 5 2 5 2;   
     -fx-border-color: #e2e2e2;
     -fx-border-width: 2;
     -fx-background-radius: 0;
     -fx-background-color: #1E90FF;
     -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
     -fx-font-size: 12pt;
-    -fx-text-fill: #1E90FF;
+    -fx-text-fill: black;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
 }
 
@@ -110,11 +110,11 @@
 
 .button:pressed, .button:default:hover:pressed {
   -fx-background-color: white;
-  -fx-text-fill: #1E90FF;
+  -fx-text-fill: black;
 }
 
 .button:focused {
-    -fx-border-color: white, white;
+    -fx-border-color: black, black;
     -fx-border-width: 1, 1;
     -fx-border-style: solid, segments(1, 1);
     -fx-border-radius: 0, 0;
@@ -124,7 +124,7 @@
 .button:disabled, .button:default:disabled {
     -fx-opacity: 0.4;
     -fx-background-color: #1E90FF;
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 
 .button:default {
