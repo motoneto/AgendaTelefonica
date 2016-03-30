@@ -35,7 +35,12 @@ public class VisualizadorController {
 	        NomeColumn.setCellValueFactory(cellData -> cellData.getValue().NomeProperty());
 	        TelefoneColumn.setCellValueFactory(cellData -> cellData.getValue().TelefoneProperty());
 	        
-	       // IdColumn.setCellValueFactory(cellData -> cellData.getValue().IdProperty());
+	        //IdColumn.setCellValueFactory(cellData -> cellData.getValue().IdProperty());
+	        
+	        showPersonDetails(null);
+
+	        personTable.getSelectionModel().selectedItemProperty().addListener(
+	                (observable, oldValue, newValue) -> showPersonDetails(newValue));
 	        
 	    }
 	    public void setMain(Main main) {
@@ -52,6 +57,11 @@ public class VisualizadorController {
 	            IdLabel.setText("");
 	            TelefoneLabel.setText("");
 	        }
+	    }
+	    @FXML
+	    private void handleDeletePerson() {
+	        int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
+	        personTable.getItems().remove(selectedIndex);
 	    }
 	    
 }
