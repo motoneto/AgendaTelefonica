@@ -73,5 +73,30 @@ public class VisualizadorController {
 	                .showWarning();
 	        }
 	    }
+	    @FXML
+	    private void handleNewPerson() {
+	        Pessoa tempPerson = new Pessoa();
+	        boolean okClicked = main.showPersonEditDialog(tempPerson);
+	        if (okClicked) {
+	            main.getPersonData().add(tempPerson);
+	        }
+	    }
+	    @FXML
+	    private void handleEditPerson() {
+	        Pessoa selectedPerson = personTable.getSelectionModel().getSelectedItem();
+	        if (selectedPerson != null) {
+	            boolean okClicked = main.showPersonEditDialog(selectedPerson);
+	            if (okClicked) {
+	                showPersonDetails(selectedPerson);
+	            }
+
+	        } else {
+	            Dialogs.create()
+	                .title("Nenhuma seleção")
+	                .masthead("Nenhuma Pessoa Selecionada")
+	                .message("Por favor, selecione uma pessoa na tabela.")
+	                .showWarning();
+	        }
+	    }
 	    
 }
