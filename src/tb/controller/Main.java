@@ -23,6 +23,7 @@ import javafx.stage.Stage;
 import tb.controller.modelo.ListaPessoa;
 import tb.controller.modelo.Pessoa;
 import tb.controller.view.EditarPessoaController;
+import tb.controller.view.MenuController;
 import tb.controller.view.VisualizadorController;
 
 public class Main extends Application {
@@ -108,16 +109,25 @@ public class Main extends Application {
 
     public void initRootLayout() {
         try {
-           
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("view/menu.fxml"));
+            loader.setLocation(Main.class
+                    .getResource("view/menu.fxml"));
             menu = (BorderPane) loader.load();
-            
+
             Scene scene = new Scene(menu);
             primaryStage.setScene(scene);
+
+            MenuController controller = loader.getController();
+            controller.setMain(this);
+
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+
+        File file = getPersonFilePath();
+        if (file != null) {
+            loadPersonDataFromFile(file);
         }
     }
     public boolean showPersonEditDialog(Pessoa person) {
