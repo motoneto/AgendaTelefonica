@@ -4,6 +4,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.prefs.Preferences;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+
+import org.controlsfx.dialog.Dialogs;
+
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,6 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import tb.controller.modelo.ListaPessoa;
 import tb.controller.modelo.Pessoa;
 import tb.controller.view.EditarPessoaController;
 import tb.controller.view.VisualizadorController;
@@ -44,6 +51,46 @@ public class Main extends Application {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+    public void loadPersonDataFromFile(File file) {
+        try {
+            JAXBContext context = JAXBContext
+                    .newInstance(ListaPessoa.class);
+            Unmarshaller um = context.createUnmarshaller();
+
+            ListaPessoa wrapper = (ListaPessoa) um.unmarshal(file);
+
+            personData.clear();
+            personData.addAll(wrapper.getPersons());
+
+            setPersonFilePath(file);
+
+        } catch (Exception e) { // catches ANY exception
+            Dialogs.create()
+                    .title("Erro")
+                    .masthead("Não foi possível carregar dados do arquivo:\n" 
+                              + file.getPath()).showException(e);
+        }
+    }
+
+    public void savePersonDataToFile(File file) {
+        try {
+            JAXBContext context = JAXBContext
+                    .newInstance(ListaPessoa.class);
+            Marshaller m = context.createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+            ListaPessoa wrapper = new ListaPessoa();
+            wrapper.setPersons(personData);
+
+            m.marshal(wrapper, file);
+
+            setPersonFilePath(file);
+        } catch (Exception e) { // catches ANY exception
+            Dialogs.create().title("Erro")
+                    .masthead("Não foi possível salvar os dados do arquivo:\n" 
+                              + file.getPath()).showException(e);
         }
     }
     public ObservableList<Pessoa> getPersonData() {

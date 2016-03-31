@@ -29,14 +29,14 @@ public class MenuController {
         File file = fileChooser.showOpenDialog(main.getPrimaryStage());
 
         if (file != null) {
-           // main.loadPersonDataFromFile(file);
+            main.loadPersonDataFromFile(file);
         }
     }
     @FXML
     private void handleSalvar() {
         File personFile = main.getPersonFilePath();
         if (personFile != null) {
-            //main.savePersonDataToFile(personFile);
+            main.savePersonDataToFile(personFile);
         } else {
             handleSalvarComo();
         }
@@ -54,7 +54,7 @@ public class MenuController {
             if (!file.getPath().endsWith(".xml")) {
                 file = new File(file.getPath() + ".xml");
             }
-            //main.savePersonDataToFile(file);
+            main.savePersonDataToFile(file);
         }
     }
 
