@@ -7,18 +7,18 @@ import javafx.beans.property.StringProperty;
 
 public class Pessoa {
 
-	 private final StringProperty Nome;
-	 private final StringProperty Telefone;
-	 private final StringProperty Id;
+	 private final SimpleStringProperty Nome;
+	 private final IntegerProperty Telefone;
+	 private final IntegerProperty Id;
 
 	 public Pessoa() {
 		    this(null, null, null);
 		}
 
-	public Pessoa(String Id, String Nome, String telefone) {
-		 this.Id = new SimpleStringProperty(Id);
+	public Pessoa(Integer Id, String Nome, Integer telefone) {
+		 this.Id = new SimpleIntegerProperty(Id);
 		 this.Nome = new SimpleStringProperty(Nome);
-		 this.Telefone = new SimpleStringProperty(telefone);
+		 this.Telefone = new SimpleIntegerProperty(telefone);
 		 
 	}
 		public String getNome() {
@@ -31,26 +31,26 @@ public class Pessoa {
 	        return Nome;
 	    }
 	    
-	    public String getId() {
+	    public int getId() {
 	        return Id.get();
 	    }
 
-	    public void setId(String Id) {
+	    public void setId(int Id) {
 	        this.Id.set(Id);
 	    }
 
-	    public StringProperty IdProperty() {
+	    public IntegerProperty IdProperty() {
 	        return Id;
 	    }
-	        public String getTelefone() {
+	        public int getTelefone() {
 	            return Telefone.get();
 	        }
 
-	        public void setTelefone(String Telefone) {
+	        public void setTelefone(Integer Telefone) {
 	            this.Telefone.set(Telefone);
 	        }
 
-	        public StringProperty TelefoneProperty() {
+	        public IntegerProperty TelefoneProperty() {
 	            return Telefone;
 	        }
 }

@@ -34,11 +34,10 @@ public class Main extends Application {
     
 
     public Main() {
-        personData.add(new Pessoa("1", "Mauricio", "99023808"));
-        personData.add(new Pessoa("1", "Mauricio", "99023808"));
-        personData.add(new Pessoa("1", "Mauricio", "99023808"));
-        personData.add(new Pessoa("1", "Mauricio", "99023808"));
-        personData.add(new Pessoa("1", "Mauricio", "99023808"));
+        personData.add(new Pessoa(1, "Mauricio", 99023808));
+        personData.add(new Pessoa(1, "Mauricio", 99023808));
+        personData.add(new Pessoa(1, "Mauricio", 99023808));
+        personData.add(new Pessoa(1, "Mauricio", 99023808));
         }
     public void showVisualizador() {
         try {
@@ -169,12 +168,10 @@ public class Main extends Application {
         if (file != null) {
             prefs.put("filePath", file.getPath());
 
-            // Update the stage title.
             primaryStage.setTitle("AgendaTelefonica - " + file.getName());
         } else {
             prefs.remove("filePath");
 
-            // Update the stage title.
             primaryStage.setTitle("AgendaTelefonica");
         }
     }

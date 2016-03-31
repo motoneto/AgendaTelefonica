@@ -19,7 +19,7 @@ public class EditarPessoaController {
 
 
     private Stage dialogStage;
-    private Pessoa person;
+    private Pessoa pessoa;
     private boolean okClicked = false;
     @FXML
     private void initialize() {
@@ -30,11 +30,11 @@ public class EditarPessoaController {
     }
 
     public void setPerson(Pessoa person) {
-        this.person = person;
+        this.pessoa = person;
 
         NomeField.setText(person.getNome());
-        IdField.setText(person.getId());
-        TelefoneField.setText(person.getTelefone());
+        IdField.setText(Integer.toString(person.getId()));
+        TelefoneField.setText(Integer.toString(person.getTelefone()));
     }
 
     public boolean isOkClicked() {
@@ -43,9 +43,9 @@ public class EditarPessoaController {
     @FXML
     private void handleOk() {
         if (isInputValid()) {
-            person.setNome(NomeField.getText());
-            person.setId(IdField.getText());
-            person.setTelefone(TelefoneField.getText());
+            pessoa.setNome(NomeField.getText());
+            pessoa.setId(IdField.getText()));
+            pessoa.setTelefone(TelefoneField.getText());
           
             okClicked = true;
             dialogStage.close();

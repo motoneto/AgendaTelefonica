@@ -1,6 +1,7 @@
 package tb.controller.view;
 import org.controlsfx.dialog.Dialogs;
 
+import javafx.beans.property.IntegerProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -14,15 +15,13 @@ public class VisualizadorController {
 	 @FXML
 	    private TableView<Pessoa> personTable;
 	    @FXML
-	    private TableColumn<Pessoa, String> IdColumn;
+	    private TableColumn<Pessoa, Integer> IdColumn;
 	    @FXML
 	    private TableColumn<Pessoa, String> NomeColumn;
 	    @FXML
-	    private TableColumn<Pessoa, String> TelefoneColumn;
+	    private TableColumn<Pessoa, IntegerProperty> TelefoneColumn;
 	    @FXML
 	    private Label IdLabel;
-	    //@FXML
-	    //private TextField IdTextField;
 	    @FXML
 	    private Label NomeLabel;
 	    @FXML
@@ -37,7 +36,6 @@ public class VisualizadorController {
 	        NomeColumn.setCellValueFactory(cellData -> cellData.getValue().NomeProperty());
 	        TelefoneColumn.setCellValueFactory(cellData -> cellData.getValue().TelefoneProperty());
 	        
-	        //IdColumn.setCellValueFactory(cellData -> cellData.getValue().IdProperty());
 	        
 	        showPersonDetails(null);
 
@@ -52,8 +50,8 @@ public class VisualizadorController {
 	    private void showPersonDetails(Pessoa person) {
 	        if (person != null) {
 	            NomeLabel.setText(person.getNome());
-	            IdLabel.setText(person.getId());
-	            TelefoneLabel.setText(person.getTelefone());
+	            IdLabel.setText(Integer.toString(person.getId()));
+	            TelefoneLabel.setText(Integer.toString(person.getTelefone()));
 	        } else {
 	            NomeLabel.setText("");
 	            IdLabel.setText("");
