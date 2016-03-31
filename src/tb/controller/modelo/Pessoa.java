@@ -52,5 +52,5 @@ public class Pessoa {
 
 	        public StringProperty TelefoneProperty() {
 	            return Telefone;
-	        }    
+	        }
 }
