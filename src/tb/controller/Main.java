@@ -1,6 +1,8 @@
 package tb.controller;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.prefs.Preferences;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -29,7 +31,6 @@ public class Main extends Application {
         personData.add(new Pessoa("1", "Mauricio", "99023808"));
         personData.add(new Pessoa("1", "Mauricio", "99023808"));
         personData.add(new Pessoa("1", "Mauricio", "99023808"));
-        
         }
     public void showVisualizador() {
         try {
@@ -97,6 +98,30 @@ public class Main extends Application {
             return false;
         }
         }
+    public File getPersonFilePath() {
+        Preferences prefs = Preferences.userNodeForPackage(Main.class);
+        String filePath = prefs.get("filePath", null);
+        if (filePath != null) {
+            return new File(filePath);
+        } else {
+            return null;
+        }
+    }
+    public void setPersonFilePath(File file) {
+        Preferences prefs = Preferences.userNodeForPackage(Main.class);
+        if (file != null) {
+            prefs.put("filePath", file.getPath());
+
+            // Update the stage title.
+            primaryStage.setTitle("AddressApp - " + file.getName());
+        } else {
+            prefs.remove("filePath");
+
+            // Update the stage title.
+            primaryStage.setTitle("AddressApp");
+        }
+    }
+
 
 
     public void showPersonOverview() {

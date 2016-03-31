@@ -63,10 +63,10 @@ public class EditarPessoaController {
             errorMessage += "Nome inválido!\n"; 
         }
         if (IdField.getText() == null || IdField.getText().length() == 0) {
-            errorMessage += "Sobrenome inválido!\n"; 
+            errorMessage += "Id inválido!\n"; 
         }
         if (TelefoneField.getText() == null || TelefoneField.getText().length() == 0) {
-            errorMessage += "Rua inválida!\n";              
+            errorMessage += "Telefone inválida!\n";              
         }
 
         if (errorMessage.length() == 0) {
