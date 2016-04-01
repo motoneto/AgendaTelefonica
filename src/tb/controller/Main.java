@@ -34,10 +34,10 @@ public class Main extends Application {
     
 
     public Main() {
-        personData.add(new Pessoa(1, "Mauricio", 99023808));
-        personData.add(new Pessoa(1, "Mauricio", 99023808));
-        personData.add(new Pessoa(1, "Mauricio", 99023808));
-        personData.add(new Pessoa(1, "Mauricio", 99023808));
+        personData.add(new Pessoa("1", "Mauricio", "99023808"));
+        personData.add(new Pessoa("1", "Mauricio", "99023808"));
+        personData.add(new Pessoa("1", "Mauricio", "99023808"));
+        personData.add(new Pessoa("1", "Mauricio", "99023808"));
         }
     public void showVisualizador() {
         try {

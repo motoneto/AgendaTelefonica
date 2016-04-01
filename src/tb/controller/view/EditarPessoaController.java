@@ -33,8 +33,8 @@ public class EditarPessoaController {
         this.pessoa = person;
 
         NomeField.setText(person.getNome());
-        IdField.setText(Integer.toString(person.getId()));
-        TelefoneField.setText(Integer.toString(person.getTelefone()));
+        IdField.setText(person.getId());
+        TelefoneField.setText(person.getTelefone());
     }
 
     public boolean isOkClicked() {
@@ -44,7 +44,7 @@ public class EditarPessoaController {
     private void handleOk() {
         if (isInputValid()) {
             pessoa.setNome(NomeField.getText());
-            pessoa.setId(IdField.getText()));
+            pessoa.setId(IdField.getText());
             pessoa.setTelefone(TelefoneField.getText());
           
             okClicked = true;

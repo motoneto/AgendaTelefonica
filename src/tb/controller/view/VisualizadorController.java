@@ -15,11 +15,11 @@ public class VisualizadorController {
 	 @FXML
 	    private TableView<Pessoa> personTable;
 	    @FXML
-	    private TableColumn<Pessoa, Integer> IdColumn;
+	    private TableColumn<Pessoa, String> IdColumn;
 	    @FXML
 	    private TableColumn<Pessoa, String> NomeColumn;
 	    @FXML
-	    private TableColumn<Pessoa, IntegerProperty> TelefoneColumn;
+	    private TableColumn<Pessoa, String> TelefoneColumn;
 	    @FXML
 	    private Label IdLabel;
 	    @FXML
@@ -50,8 +50,8 @@ public class VisualizadorController {
 	    private void showPersonDetails(Pessoa person) {
 	        if (person != null) {
 	            NomeLabel.setText(person.getNome());
-	            IdLabel.setText(Integer.toString(person.getId()));
-	            TelefoneLabel.setText(Integer.toString(person.getTelefone()));
+	            IdLabel.setText(person.getId());
+	            TelefoneLabel.setText(person.getTelefone());
 	        } else {
 	            NomeLabel.setText("");
 	            IdLabel.setText("");
